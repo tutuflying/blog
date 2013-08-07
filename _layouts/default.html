@@ -7,19 +7,21 @@
 	<title>{{page.title}}</title>
 </head>
 <body>
-	<div class="file-navigation">
-		<div class="breadcrumb">
-			<span class="repo-root js-repo-root">
-				<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
-					<a itemscope="url" data-pjax="true" data-direction="back" data-branch="gh-pages" href="{{site.baseurl}}">
-						<span itemprop="title">home</span>
-					</a>
+	<div class="container">
+		<div class="file-navigation">
+			<div class="breadcrumb">
+				<span class="repo-root js-repo-root">
+					<span itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="">
+						<a itemscope="url" data-pjax="true" data-direction="back" data-branch="gh-pages" href="{{site.baseurl}}">
+							<span itemprop="title">home</span>
+						</a>
+					</span>
 				</span>
-			</span>
-			<span class="separator">/</span> 
-			<strong class="final-path">{{page.title}}</strong>
+				<span class="separator">/</span> 
+				<strong class="final-path">{{page.title}}</strong>
+			</div>
 		</div>
+		<article itemprop="mainContentOfPage" class="markdown-body entry-content">{{content}}</article>
 	</div>
-	<article itemprop="mainContentOfPage" class="markdown-body entry-content container">{{content}}</article>
 </body>
 </html>
