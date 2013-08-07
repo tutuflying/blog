@@ -1,0 +1,30 @@
+---
+layout: default
+title: ubuntu配置github
+---
+<h2>{{ page.title }}</h2>
+<p>
+	1.git 安装
+sudo apt-get install git
+2.ubuntu 本地创建ssh密钥
+ssh-keygen -t rsa -C "your_email@youremail.com"
+生成两个文件id_rsa(留在本地)，id_rsa.pub(添加到github ssh keys) 
+3.测试连通
+ssh git@github.com
+4.设置帐号
+git config --global user.email "zhaoyijun1987@hotmail.com"
+git config --global user.name "tutuflying"
+5.github上新建一个仓储gitTest
+6.Create a new repository on the command line
+touch README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:tutuflying/gitTest.git
+git push -u origin master
+7.Push an existing repository from the command line
+git remote add origin git@github.com:tutuflying/gitTest.git
+git push -u origin master
+</p>
+<p>{{ page.date | date_to_string }}</p>
+
