@@ -3,7 +3,7 @@ layout: default
 title: 2013-08-20-单例模式
 ---
 <style type="text/css">
-	div{width: 100px;height: 100px;background: red;}
+	#container div{width: 100px;height: 100px;background: red;}
 </style>
 <h1>{{ page.title }}</h1>
 <h2></h2>
@@ -18,7 +18,7 @@ title: 2013-08-20-单例模式
 		}
 
 		var div = singleton(function(){
-			return document.body.appendChild(document.createElement("div"));
+			return document.getElementById("container").appendChild(document.createElement("div"));
 		});
 		document.getElementById("add").onclick = function(){
 			div();
@@ -26,6 +26,9 @@ title: 2013-08-20-单例模式
 	</code>	
 </pre>
 <p>添加一个div元素<button id="add">add</button></p>
+<div id="container">
+
+</div>
 <script type="text/javascript">
 	var singleton = function(fn){
 		var result;
@@ -35,7 +38,7 @@ title: 2013-08-20-单例模式
 	}
 
 	var div = singleton(function(){
-		return document.body.appendChild(document.createElement("div"));
+		return document.getElementById("container").appendChild(document.createElement("div"));
 	});
 	document.getElementById("add").onclick = function(){
 		div();
