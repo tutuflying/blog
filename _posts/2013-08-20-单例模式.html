@@ -1,0 +1,43 @@
+---
+layout: default
+title: 2013-08-20-单例模式
+---
+<style type="text/css">
+	div{width: 100px;height: 100px;background: red;}
+</style>
+<h1>{{ page.title }}</h1>
+<h2></h2>
+<p>利用闭包实现</p>
+<pre>
+	<code>
+		var singleton = function(fn){
+			var result;
+			return function(){
+				return result || (result = fn.apply(this, arguments));
+			}
+		}
+
+		var div = singleton(function(){
+			return document.body.appendChild(document.createElement("div"));
+		});
+		document.getElementById("add").onclick = function(){
+			div();
+		}
+	</code>	
+</pre>
+<p>添加一个div元素<button id="add">add</button></p>
+<script type="text/javascript">
+	var singleton = function(fn){
+		var result;
+		return function(){
+			return result || (result = fn.apply(this, arguments));
+		}
+	}
+
+	var div = singleton(function(){
+		return document.body.appendChild(document.createElement("div"));
+	});
+	document.getElementById("add").onclick = function(){
+		div();
+	}
+</script>
