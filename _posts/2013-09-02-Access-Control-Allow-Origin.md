@@ -35,4 +35,4 @@ title: Access-Control-Allow-Origin
 	  throw new Error('CORS not supported');
 	}
 
-页面头部需设置Access-Control-Allow-Origin属性
+返回请求头部需设置Access-Control-Allow-Origin属性
